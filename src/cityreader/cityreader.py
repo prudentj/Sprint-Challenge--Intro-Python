@@ -74,42 +74,42 @@ for c in cities:
 # Tucson: (32.1558,-110.8777)
 # Salt Lake City: (40.7774,-111.9301)
 
-# TODO Get latitude and longitude values from the user
-userInput = input("Enter lat1,lon1: ")
-square1 = userInput.split(",")
-userInput = input("Enter lat2,lon2: ")
-square2 = userInput.split(",")
-lats = []
-lons = []
-# Sorting from less to greater
-if float(square1[0]) > float(square2[0]):
-    lats.append(float(square2[0]))
-    lats.append(float(square1[0]))
-else:
-    lats.append(float(square1[0]))
-    lats.append(float(square2[0]))
+# # TODO Get latitude and longitude values from the user
+# userInput = input("Enter lat1,lon1: ")
+# square1 = userInput.split(",")
+# userInput = input("Enter lat2,lon2: ")
+# square2 = userInput.split(",")
+# lats = []
+# lons = []
+# # Sorting from less to greater
+# if float(square1[0]) > float(square2[0]):
+#     lats.append(float(square2[0]))
+#     lats.append(float(square1[0]))
+# else:
+#     lats.append(float(square1[0]))
+#     lats.append(float(square2[0]))
 
-if float(square1[1]) > float(square2[1]):
-    lons.append(float(square2[1]))
-    lons.append(float(square1[1]))
-else:
-    lons.append(float(square1[1]))
-    lons.append(float(square2[1]))
+# if float(square1[1]) > float(square2[1]):
+#     lons.append(float(square2[1]))
+#     lons.append(float(square1[1]))
+# else:
+#     lons.append(float(square1[1]))
+#     lons.append(float(square2[1]))
 
 
-def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
-    # within will hold the cities that fall within the specified region
-    within = []
+# def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+#     # within will hold the cities that fall within the specified region
+#     within = []
 
-    # TODO Ensure that the lat and lon valuse are all floats
-    # Go through each city and check to see if it falls within
-    # the specified coordinates.
-    with open('cities.csv', 'r') as csvfile:
-        filereader = csv.reader(csvfile)
+#     # TODO Ensure that the lat and lon valuse are all floats
+#     # Go through each city and check to see if it falls within
+#     # the specified coordinates.
+#     with open('cities.csv', 'r') as csvfile:
+#         filereader = csv.reader(csvfile)
 
-        next(filereader)
+#         next(filereader)
 
-        for row in filereader:
-            if float(row[3]) > lat1 and float(row[3]) < lat2 and float(row[4]) < lon2 and float(row[4]) > lon1:
-                within.append(City(row[0], float(row[3]), float(row[4])))
-    return within
+#         for row in filereader:
+#             if float(row[3]) > lat1 and float(row[3]) < lat2 and float(row[4]) < lon2 and float(row[4]) > lon1:
+#                 within.append(City(row[0], float(row[3]), float(row[4])))
+#     return within
